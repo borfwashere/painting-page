@@ -92,7 +92,7 @@
       "Exhibition/Mac Portable ArtConstruit Gallery-2025/276bea1a-d908-4c0a-94a3-6c5b08cdc496.jpg",
       "Exhibition/Mac Portable ArtConstruit Gallery-2025/18b97077-b934-4d75-8871-dd5f3336225a.jpg",
       "Exhibition/Mac Portable ArtConstruit Gallery-2025/f31a7ae1-9716-41a5-bc03-1affcf32b25b.jpg",
-      "Exhibition/Mac Portable ArtConstruit Gallery-2025/BA5922A5-5577-4875-95D6-FFF69C3C701E.jpeg"
+      "Exhibition/Mac Portable ArtConstruit Gallery-2025/BA5922A5-5577-4875-95D6-FFF69C3C701E.jpg"
     ],
     "objectPositions": {
       "0": "44.9618% 100%",
@@ -176,7 +176,7 @@
     "year": 2023,
     "images": [
       "Exhibition/L'Ignorance-Museo De Arte Contemporàneo de Caracas-2023/Gemini_Generated_Image_nxf5lnnxf5lnnxf5.jpg",
-      "Exhibition/L'Ignorance-Museo De Arte Contemporàneo de Caracas-2023/Francisco Borsec Abril 2023 para ELNACIONAL-14.JPG",
+      "Exhibition/L'Ignorance-Museo De Arte Contemporàneo de Caracas-2023/Francisco Borsec Abril 2023 para ELNACIONAL-14.jpg",
       "Exhibition/L'Ignorance-Museo De Arte Contemporàneo de Caracas-2023/SaveClip.App_656067812_18119009605619029_4778598287695526783_n.jpg",
       "Exhibition/L'Ignorance-Museo De Arte Contemporàneo de Caracas-2023/photo_2026-09-09_05-36-16.jpg",
       "Exhibition/L'Ignorance-Museo De Arte Contemporàneo de Caracas-2023/SaveClip.App_656047221_18149282365415614_4751321804304606291_n.jpg",
