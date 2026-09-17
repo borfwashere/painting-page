@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/publications.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+</head>
+<body class="page-blog site-alignment-center site-titlelogo-position-right header-position-fixed project-hover-zoom project-hover-panning autohide-footer social-icon-style-normal collection-type-page collection-layout-default view-list">
+
+    <div id="navigator">
+
+        <header id="topBar">
+
+            <div class="siteTitle"><a href="index.html">Canaem Brice&ntilde;o</a></div>
+
+            <div id="mobileNav">
+                <nav id="mobile-navigation">
+                    <div id="mobile-navigation-label"></div>
+                    <ul data-content-field="navigation-mobileNav">
+                        <li class="folder">
+                            <button class="folder-toggle">Exhibition</button>
+                            <ul id="mobile-exhibition-list" class="folder-child">
+                            </ul>
+                        </li>
+                        <li class="folder">
+                            <button class="folder-toggle">Work</button>
+                            <ul id="mobile-work-list" class="folder-child">
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <nav class="main-nav dropdown-hover">
+                <ul id="nav" data-content-field="navigation-mainNav">
+                    <li class="folders-collection folder">
+                        <a>Exhibition</a>
+                        <div class="subnav">
+                            <ul id="main-exhibition-list">
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="folders-collection folder active-link active-folder">
+                        <a>Work</a>
+                        <div class="subnav">
+                            <ul id="main-work-list">
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <section id="container">
+            <div id="container-content">
+
+                <div id="publications-container"></div>
+
+                <footer id="bottomBar">
+                    <div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+
+    <script src="data/exhibitions.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/year-data.js?v=2"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script>
+        populateExhibitionDropdown();
+        initMobileNav();
+        initFolderToggles();
+        initDesktopNavTap();
+    </script>
+</body>
+</html>

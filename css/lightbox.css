@@ -1,0 +1,143 @@
+/* ===== Lightbox ===== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.92);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-image {
+    max-width: 85vw;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox-caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 13px;
+    font-family: var(--font-display, Arial, sans-serif);
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 12px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85vw;
+}
+
+/* Close button */
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10001;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+    font-family: Arial, sans-serif;
+}
+
+.lightbox-close:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Arrows */
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10001;
+    padding: 20px 12px;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.lightbox-arrow:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-prev {
+    left: 12px;
+}
+
+.lightbox-next {
+    right: 12px;
+}
+
+.lightbox-arrow.hidden {
+    display: none;
+}
+
+/* Touch swipe area */
+.lightbox-overlay {
+    cursor: default;
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+    .lightbox-image {
+        max-width: 95vw;
+        max-height: 75vh;
+    }
+
+    .lightbox-arrow {
+        font-size: 28px;
+        padding: 16px 8px;
+    }
+
+    .lightbox-prev {
+        left: 4px;
+    }
+
+    .lightbox-next {
+        right: 4px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+        font-size: 24px;
+    }
+
+    .lightbox-caption {
+        font-size: 12px;
+        padding: 8px 0 0;
+    }
+}
