@@ -642,14 +642,17 @@ html.wf-loading * {
     .subnav {
         position: absolute;
         background: #121212;
-        min-width: 100%;
-        left: 0;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        max-width: 100vw;
         top: 100%;
         opacity: 1;
         height: auto;
         display: none;
         overflow: visible;
+        z-index: 9000;
+        border-top: 1px solid #333;
     }
 
     .folders-collection.dropdown-open > .subnav {
@@ -663,7 +666,7 @@ html.wf-loading * {
     }
 
     .subnav li a {
-        padding: 5px 16px;
+        padding: 10px 20px;
         font-size: 12px;
         text-align: center;
     }
