@@ -33,7 +33,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ===== localStorage: Read Positions =====
+    // ===== Baked Positions (from exhibitionsData) =====
+    function applyBakedPositions(exhibition, grid) {
+        if (!exhibition.objectPositions) return;
+        var items = grid.querySelectorAll('.exhibition-item');
+        items.forEach(function(item) {
+            var idx = item.getAttribute('data-index');
+            if (exhibition.objectPositions[idx]) {
+                var img = item.querySelector('img');
+                if (img) img.style.objectPosition = exhibition.objectPositions[idx];
+            }
+        });
+    }
+
+    // ===== localStorage: Read Positions (override) =====
     function getExhibitionPositions() {
         try {
             return JSON.parse(localStorage.getItem('exhibition-positions') || '{}');
@@ -117,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         container.insertAdjacentHTML('beforeend', html);
 
         var grid = container.querySelector('.exhibition-grid');
+        applyBakedPositions(exhibition, grid);
         applySavedPositions(exhibition.id, grid);
     }
 
