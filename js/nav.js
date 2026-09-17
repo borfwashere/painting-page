@@ -62,6 +62,7 @@ function initDesktopNavTap() {
     folders.forEach(function(folder) {
         folder.addEventListener('click', function(e) {
             if (window.innerWidth > 639) return;
+            if (e.target.closest('.subnav')) return;
             e.preventDefault();
             e.stopPropagation();
             var wasOpen = this.classList.contains('dropdown-open');

@@ -155,18 +155,43 @@
     }
 
     .exhibition-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .exhibition-item:not(:first-child) {
-        display: none;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
+        max-width: 100%;
     }
 
     .exhibition-item {
+        min-width: 100%;
+        scroll-snap-align: start;
         aspect-ratio: auto;
     }
 
     .exhibition-item img {
         object-fit: contain;
+    }
+
+    .exhibition-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .exhibition-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .exhibition-dot.active {
+        background: #222;
     }
 }

@@ -69,6 +69,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ===== Mobile Carousel Dots =====
+    function initCarouselDots(grid, count) {
+        if (count <= 1) return;
+        var dots = document.createElement('div');
+        dots.className = 'exhibition-dots';
+        var activeIndex = 0;
+        var dotElements = [];
+
+        for (var i = 0; i < count; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'exhibition-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', function() {
+                var idx = parseInt(this.getAttribute('data-index'));
+                var items = grid.querySelectorAll('.exhibition-item');
+                if (items[idx]) {
+                    items[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                }
+            });
+            dots.appendChild(dot);
+            dotElements.push(dot);
+        }
+
+        grid.parentNode.insertBefore(dots, grid.nextSibling);
+
+        grid.addEventListener('scroll', function() {
+            var scrollLeft = grid.scrollLeft;
+            var itemWidth = grid.offsetWidth;
+            var newIndex = Math.round(scrollLeft / itemWidth);
+            if (newIndex !== activeIndex && newIndex >= 0 && newIndex < count) {
+                dotElements[activeIndex].classList.remove('active');
+                dotElements[newIndex].classList.add('active');
+                activeIndex = newIndex;
+            }
+        });
+    }
+
     // ===== Build Exhibition List (sin param) =====
     function buildExhibitionList(data) {
         var container = document.getElementById('exhibitions-container');
@@ -132,6 +169,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var grid = container.querySelector('.exhibition-grid');
         applyBakedPositions(exhibition, grid);
         applySavedPositions(exhibition.id, grid);
+
+        if (window.innerWidth <= 639) {
+            initCarouselDots(grid, exhibition.images.length);
+        }
     }
 
     // ===== Navigator Fade-in =====

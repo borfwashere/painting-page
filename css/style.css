@@ -629,6 +629,7 @@ html.wf-loading * {
 
     #nav li {
         margin: 0;
+        position: relative;
     }
 
     #nav li a {
@@ -639,19 +640,18 @@ html.wf-loading * {
     }
 
     .subnav {
-        position: static;
+        position: absolute;
         background: #121212;
         min-width: 100%;
         left: 0;
         right: 0;
+        top: 100%;
         opacity: 1;
         height: auto;
         display: none;
         overflow: visible;
     }
 
-    .main-nav > ul > li:hover .subnav,
-    .folders-collection:hover > .subnav,
     .folders-collection.dropdown-open > .subnav {
         display: block;
     }
