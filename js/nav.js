@@ -13,12 +13,14 @@ function populateExhibitionDropdown() {
     sorted.forEach(function(exhibition) {
         var text = exhibition.gallery + ', ' + exhibition.year;
 
+        var displayText = text.replace(/Museo\s+(De|de)\s+Arte\s+Contempor[aá]neo\s+de\s+Caracas/gi, 'MACCAR');
+
         if (desktopList) {
             var li = document.createElement('li');
             li.className = 'blog-collection';
             var a = document.createElement('a');
             a.href = 'exhibition.html?id=' + exhibition.id;
-            a.textContent = text;
+            a.textContent = displayText;
             li.appendChild(a);
             desktopList.appendChild(li);
         }
@@ -27,7 +29,7 @@ function populateExhibitionDropdown() {
             var li = document.createElement('li');
             var a = document.createElement('a');
             a.href = 'exhibition.html?id=' + exhibition.id;
-            a.textContent = text;
+            a.textContent = displayText;
             li.appendChild(a);
             mobileList.appendChild(li);
         }

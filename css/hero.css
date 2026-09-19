@@ -110,15 +110,17 @@ body {
     }
 
     .hero-header .subnav {
-        position: static;
+        position: fixed;
         background: rgba(0, 0, 0, 0.85);
-        min-width: 100%;
         left: 0;
         right: 0;
+        top: 38px;
         opacity: 1;
         height: auto;
+        max-height: 70vh;
+        overflow-y: auto;
         display: none;
-        overflow: visible;
+        z-index: 9000;
     }
 
     .hero-header .folders-collection.dropdown-open > .subnav {
@@ -132,7 +134,7 @@ body {
     }
 
     .hero-header .subnav li a {
-        padding: 4px 14px;
+        padding: 3px 14px;
         font-size: 11px;
         text-align: center;
         color: #ccc;

@@ -640,17 +640,16 @@ html.wf-loading * {
     }
 
     .subnav {
-        position: absolute;
+        position: fixed;
         background: #121212;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        max-width: 100vw;
-        top: 100%;
+        left: 0;
+        right: 0;
+        top: 38px;
         opacity: 1;
         height: auto;
+        max-height: 70vh;
+        overflow-y: auto;
         display: none;
-        overflow: visible;
         z-index: 9000;
         border-top: 1px solid #333;
     }
@@ -659,15 +658,21 @@ html.wf-loading * {
         display: block;
     }
 
+    #nav > li:first-child > .subnav {
+        left: 0;
+        right: 0;
+        top: 38px;
+    }
+
     .subnav ul {
         display: flex;
         flex-direction: column;
-        padding: 4px 0;
+        padding: 2px 0;
     }
 
     .subnav li a {
-        padding: 10px 20px;
-        font-size: 12px;
+        padding: 6px 15px;
+        font-size: 11px;
         text-align: center;
     }
 
