@@ -133,6 +133,11 @@ body {
         padding: 4px 0;
     }
 
+    .hero-header .subnav li {
+        width: 100%;
+        text-align: center;
+    }
+
     .hero-header .subnav li a {
         padding: 3px 14px;
         font-size: 11px;

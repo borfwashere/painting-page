@@ -670,6 +670,11 @@ html.wf-loading * {
         padding: 2px 0;
     }
 
+    .subnav li {
+        width: 100%;
+        text-align: center;
+    }
+
     .subnav li a {
         padding: 6px 15px;
         font-size: 11px;
